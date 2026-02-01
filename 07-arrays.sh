@@ -7,3 +7,5 @@ echo "First movie is: ${MOVIES[1]}"
 echo "First movie is: ${MOVIES[2]}" 
 
 echo "All movies are: ${MOVIES[@]}"
+
+echo "All variables passed: $@"
