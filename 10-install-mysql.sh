@@ -16,7 +16,7 @@ then
 else
     echo "install mysql..success"
 
-dnf install gittt -y
+dnf install gitt -y
 if [ $? -ne 0 ]
 then
     echo "installing git..Failure"
