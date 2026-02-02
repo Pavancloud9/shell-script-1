@@ -24,3 +24,4 @@ then
 else
     echo "install mysql..success"
  
+ fi
