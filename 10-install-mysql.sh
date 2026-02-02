@@ -15,4 +15,12 @@ then
     exit 1 
 else
     echo "install mysql..success"
+
+dnf install gittt -y
+if [ $? -ne 0 ]
+then
+    echo "installing git..Failure"
+    exit 1 
+else
+    echo "install mysql..success"
  
