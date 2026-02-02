@@ -1,13 +1,13 @@
 #!/bin/bash
 
-NUMBER=$1
+NUMBER=200
 
-if [ $NUMBER is -gt 100 ]
+if [ $NUMBER -gt 100 ]
 
 then 
-    echo "Given number $NUMBER is greater than 50"
+    echo "Given number $NUMBER is greater than 100"
 else
-    echo "Given number $NUMBER is less than or equal to 50"
+    echo "Given number $NUMBER is less than or equal to 100"
 
 fi
     
