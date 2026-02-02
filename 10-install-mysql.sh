@@ -8,4 +8,3 @@ then
     echo "ERROR:: You must have SUDO access to execute"
 fi 
     dnf install mysqll -y
-    dnf install git 
