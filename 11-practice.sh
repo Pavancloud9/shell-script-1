@@ -22,3 +22,17 @@ then
 else
     echo "Mysql already installed...SKIPPING"
 fi
+
+dnf list installed git
+if [ $? -ne 0 ]
+then
+    dnf install git -y
+    if [ $? -ne 0 ]
+then
+    echo "Installing Git..FAILURE"
+else
+    echo "Installing Git..SUCCESS"
+    fi
+else
+    echo "Git already installed...SKIPPING"
+fi
