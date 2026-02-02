@@ -19,4 +19,5 @@ then
     fi
 else
     echo "Mysql already installed...SKIPPING"
+fi
 
