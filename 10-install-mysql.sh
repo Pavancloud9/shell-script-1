@@ -12,12 +12,13 @@ dnf list installed mysql
 if [ $? -ne 0 ]   ### Not installed
 then
     dnf install mysql -y
-    if [ $? -ne 0 ]
+    if [ $? -ne 0 ]  # 0 KI 0 EQUAL AVAKAPOTHE
     then
         echo "installing mysql..Failure"
         exit 1 
     else
         echo "install mysql..success"
+    fi
 else
     echo "Mysql already installed..skipping"
 fi
