@@ -28,7 +28,7 @@ PACKAGE () {
 
 ################################################
 
-echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 dnf list installed mysql   
 if [ $? -ne 0 ]   ##### 0 KI EQUAL KAKAPOTHE
