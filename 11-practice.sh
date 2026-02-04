@@ -2,40 +2,42 @@
 
 USERID=$(id -u)
 
-VALIDATE() {
-    if [ $1 -ne 0 ]
-    then 
-        echo "$2...FAILURE"
-        exit 1
-    else
-        echo "$2..SUCCESS"
-    fi
-}
-
-
-if [ $USERID -ne 0 ]
+if [ $? -ne 0 ]
 then
-    echo "You must have sudo access to run this script"
+    echo "ERROR:: You must have sudo access to run this script"
     exit 1
 fi
 
+###############################
+
+PACKAGE() {            ########## FUNCTION
+    if [ $1 -ne 0 ] 
+    then
+        echo "Installing $2...FAILURE"
+    else
+        echo "Installing $2...SUCCESS"
+    fi
+}
+
+################################
+
 dnf list installed mysql
 if [ $? -ne 0 ]
-then 
+    PACKAGE $? "Installing mysql"
+then
     dnf install mysql -y
-    VALIDATE $? "Instaling mysql"
-    
 else
-    echo "Mysql already installed...SKIPPING"
+    echo "MYSQL ALREADY INSTALLED...SKIPPING"
 fi
 
-####################################
+###############################
 
 dnf list installed git
 if [ $? -ne 0 ]
-then
+then 
     dnf install git -y
-    VALIDATE $? "Installing git"
+    FUNCTION $? "Installing git"
 else
-    echo "Git already installed...SKIPPING"
+    echo "GIT IS ALREADY INSTALLED"
 fi
+
