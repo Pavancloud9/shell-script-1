@@ -10,7 +10,7 @@ fi
 
 LOGS_FOLDER_NAME="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
-TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER_NAME/$LOG_FILE/$TIMESTAMP"
 
 ##########################################
@@ -27,7 +27,7 @@ PACKAGE () {
 
 ################################################
 
-echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME.log
 
 dnf list installed mysql  
 if [ $? -ne 0 ]   ##### 0 KI EQUAL KAKAPOTHE
