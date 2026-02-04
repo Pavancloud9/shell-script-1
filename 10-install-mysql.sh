@@ -29,10 +29,10 @@ PACKAGE () {
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
-dnf list installed mysql  
+dnf list installed mysql   
 if [ $? -ne 0 ]   ##### 0 KI EQUAL KAKAPOTHE
 then
-    dnf install mysql -y
+    dnf install mysql -y  &>>$LOG_FILE_NAME
     VALIDATE $? "Installing mysql"
 else
     echo "Mysql already installed..skipping"
@@ -43,7 +43,7 @@ fi
 dnf list installed git
 if [ $? -ne 0 ]
 then
-    dnf install git -y 
+    dnf install git -y  &>>$LOG_FILE_NAME
     PACKAGE $? "Installing Git"
 else
     echo "GIT already installing...SKIPPING"
