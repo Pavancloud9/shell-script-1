@@ -29,12 +29,6 @@ PACKAGE_FUNCTION () {
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 
-for i in {0..100}
-do
-echo $i
-done
-
-
 for PACKAGE in $@
 do
     dnf list installed $PACKAGE
