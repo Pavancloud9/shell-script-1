@@ -2,7 +2,19 @@
 
 USERID=$(id -u)
 
-VALIDATE() {
+if [ $USERID -ne 0 ]
+then
+    echo "ERROR:: You must have SUDO access to execute"
+    exit 1
+fi 
+
+LOGS_FOLDER_NAME="/var/log/shellscript-logs"
+FILE_NAME=$(echo $0)
+
+
+##########################################
+
+PACKAGE () {
     if [ $1 -ne 0 ]  
     then
         echo "$2..Failure"
@@ -11,12 +23,6 @@ VALIDATE() {
         echo "$2..success"
     fi
 }
-
-if [ $USERID -ne 0 ]
-then
-    echo "ERROR:: You must have SUDO access to execute"
-    exit 1
-fi 
 
 ################################################
 
@@ -35,7 +41,7 @@ dnf list installed git
 if [ $? -ne 0 ]
 then
     dnf install git -y 
-    VALIDATE $? "Installing Git"
+    PACKAGE $? "Installing Git"
 else
     echo "GIT already installing...SKIPPING"
 fi
