@@ -8,10 +8,10 @@ then
     exit 1
 fi 
 
-LOGS_FOLDER_NAME="/var/log/shellscript-logs"
+LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
-LOG_FILE_NAME="$LOGS_FOLDER_NAME/$LOG_FILE-$TIMESTAMP"
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP"
 
 #####   10-install-mysql-2026-02-04_07-33-58.log.log
 
@@ -29,7 +29,7 @@ PACKAGE () {
 
 ################################################
 
-echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+# echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 dnf list installed mysql  
 if [ $? -ne 0 ]   ##### 0 KI EQUAL KAKAPOTHE
