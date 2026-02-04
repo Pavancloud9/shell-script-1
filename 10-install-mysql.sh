@@ -9,7 +9,10 @@ then
 fi 
 
 LOGS_FOLDER_NAME="/var/log/shellscript-logs"
-FILE_NAME=$(echo $0)
+FILE_NAME=$(echo $0 | cut -d "." -f1)
+TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+
+
 
 
 ##########################################
