@@ -34,7 +34,7 @@ do
     dnf list installed $PACKAGE
     if [ $? -ne 0 ]
     then
-        dnf install $PACKAGE -y
+        dnf install $PACKAGE -y  &>>$LOG_FILE_NAME 
         PACKAGE_FUNCTION $? "Installing $PACKAGE"
     else
         echo "$PACKAGE...is already installed..SKIPPING"
