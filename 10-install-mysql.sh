@@ -33,7 +33,7 @@ dnf list installed mysql
 if [ $? -ne 0 ]   ##### 0 KI EQUAL KAKAPOTHE
 then
     dnf install mysql -y  &>>$LOG_FILE_NAME
-    VALIDATE $? "Installing mysql"
+    PACKAGE $? "Installing mysql"
 else
     echo "Mysql already installed..skipping"
 fi
