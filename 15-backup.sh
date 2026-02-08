@@ -33,4 +33,5 @@ DAYS=${3:-14}
 if [ $# -lt 2 ]
     then
         USAGE
+        exit 1
     fi
