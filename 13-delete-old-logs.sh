@@ -28,4 +28,5 @@ PACKAGE_FUNCTION () {
     fi
 }
 
-find $SOURCE_DIRECTORY -name "*.log" -mtime +14 -delete
+FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14 -delete)
+
