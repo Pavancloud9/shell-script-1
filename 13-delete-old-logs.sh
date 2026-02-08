@@ -28,4 +28,4 @@ PACKAGE_FUNCTION () {
     fi
 }
 
-find $SOURCE_DIRECTORY -name "*.log" -mtime +14
+find $SOURCE_DIRECTORY -name "*.log" -mtime +14 -delete
