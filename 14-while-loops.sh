@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=temp.txt
+FILE=13-delete-old-logs.sh
 while read -r line;
 do
     echo $line
