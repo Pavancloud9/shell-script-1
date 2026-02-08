@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
+DATE=$(date)
 
 if [ $USERID -ne 0 ]
 then
@@ -31,4 +32,5 @@ PACKAGE_FUNCTION () {
 FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 echo "Files to be deleted: $FILES_TO_DELETE"
+
 
