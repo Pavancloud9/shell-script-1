@@ -2,6 +2,7 @@
 
 USERID=$(id -u)
 DATE=$(date)
+echo "date is $DATE"
 
 if [ $USERID -ne 0 ]
 then
