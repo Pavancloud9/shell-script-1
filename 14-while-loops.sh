@@ -1,7 +1,6 @@
 #!/bin/bash
 
-FILE=13-delete-old-logs.sh
-while read -r line;
+while read -r LINE 
 do
-    echo $line
-done < "$FILE"
+    echo $LINE
+done < 13-delete-old-logs.sh
