@@ -32,7 +32,7 @@ USAGE() {
     echo "ERROR: You must use this script as sh 15-backup.sh <SOURCE_DIR> <DEST_DIR> <days>(optional) "
 }
 
-if [ $# -ne 2 ]  
+if [ $# -lt 2 ]  
 then
     USAGE
     exit 1
@@ -50,7 +50,9 @@ then
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*/log" -mtime $DAYS_AGO)
+####### FIND THE FILES NOW
+
+FILES=$(find $SOURCE_DIR -name "*/log" -mtime +$DAYS_AGO)
     echo "Files are: $FILES"
 
 
