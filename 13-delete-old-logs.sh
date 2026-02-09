@@ -40,6 +40,7 @@ echo "Files to be deleted: $FILES_TO_DELETE"
 while read -r FILE
 do
     echo "Deleting files are: $FILE"
+    rm -rf $FILE
 done <<< $FILES_TO_DELETE
 
 

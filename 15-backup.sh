@@ -22,21 +22,17 @@ PACKAGE () {
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
-USAGE() {
-  echo "USAGE of the script is: sh 15-backup.sh <SOURCE_DIR> <DEST_DIR> <DAYS(optional)>"
-}
-
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3:-14}
+DAYS_AGO=${3:-14}
 
-if [ $# -lt 2 ]
-    then
-        USAGE
-        exit 1 
-    fi
+USAGE() {
+    echo "ERROR: You must use this script as sh 15-backup.sh <SOURCE_DIR> <DEST_DIR> <days>(optional) "
+}
 
-if [ ! -d $SOURCE_DIR ]
+if [ $# -ne 2 ]  
 then
-    echo "$SOURCE_DIR does not exists...please check"
+    USAGE
+    exit 1
 fi
+
