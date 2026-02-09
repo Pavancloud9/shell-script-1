@@ -6,15 +6,11 @@
 # done < 13-delete-old-logs.sh
 
 
-
-
-
-
 INPUT_FILE=13-delete-old-logs.sh
 
-while read PAVAN
+while read -r LINE
 do
-    echo "$PAVAN"
+    echo "$LINE"
 done < $INPUT_FILE
 
 

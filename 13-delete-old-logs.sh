@@ -26,13 +26,23 @@ PACKAGE_FUNCTION () {
         echo "$2..success"
     fi
 }
-##########################################
+##########################################   # 
 
 SOURCE_DIRECTORY="/home/ec2-user/shell-script-1/app-logs"
 
 FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 echo "Files to be deleted: $FILES_TO_DELETE"
+
+
+#########################################   ### READING USING WHILE LOOP
+
+INPUT_FILE="$FILES_TO_DELETE"
+
+while read FILE
+
+
+
 
 
 
