@@ -37,12 +37,10 @@ echo "Files to be deleted: $FILES_TO_DELETE"
 
 #########################################   ### READING USING WHILE LOOP
 
-INPUT_FILE="$FILES_TO_DELETE"
-
 while read -r FILE
 do
-    echo "Deleting files are $FILE"
-done < $INPUT_FILE
+    echo "Deleting files are: $FILE"
+done < $FILES_TO_DELETE
 
 
 
