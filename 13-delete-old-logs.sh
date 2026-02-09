@@ -8,16 +8,14 @@ then
     exit 1
 fi 
 
-SOURCE_DIRECTORY="/home/ec2-user/shell-script-1/app-logs"
-
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"  
 
-echo "script started executing at $TIMESTAMP" &>> $LOG_FILE_NAME 
-
 ##########################################
+
+echo "script started executing at $TIMESTAMP" &>> $LOG_FILE_NAME 
 
 PACKAGE_FUNCTION () {
     if [ $1 -ne 0 ]  
@@ -28,16 +26,14 @@ PACKAGE_FUNCTION () {
         echo "$2..success"
     fi
 }
+##########################################
+
+SOURCE_DIRECTORY="/home/ec2-user/shell-script-1/app-logs"
 
 FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 echo "Files to be deleted: $FILES_TO_DELETE"
 
 
-while read FILE
-do
-    echo "Files Deleting... $FILE"
-    rm -rf $FILE
-done <<< $FILES_TO_DELETE
 
 

@@ -18,13 +18,13 @@ PACKAGE () {
     fi
 }
 
-USAGE() {
-  echo "USAGE of the script is: sh 15-backup.sh <SOURCE_DIR> <DEST_DIR> <DAYS(optional)>"
-}
-
 ################################################
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
+USAGE() {
+  echo "USAGE of the script is: sh 15-backup.sh <SOURCE_DIR> <DEST_DIR> <DAYS(optional)>"
+}
 
 SOURCE_DIR=$1
 DEST_DIR=$2
@@ -33,5 +33,10 @@ DAYS=${3:-14}
 if [ $# -lt 2 ]
     then
         USAGE
-        exit 1
+        exit 1 
     fi
+
+if [ ! -d $SOURCE_DIR ]
+then
+    echo "$SOURCE_DIR does not exists...please check"
+fi
