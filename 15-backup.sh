@@ -19,6 +19,8 @@ PACKAGE () {
 }
 
 ################################################
+####### BACKUP FILES FROM ONE FOLDER TO OTHER FOLDER
+
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
@@ -47,6 +49,10 @@ then
     echo "$DEST_DIR does not exists..please check it"
     exit 1
 fi
+
+FILES=$(find $SOURCE_DIR -name "*/log" -mtime $DAYS_AGO)
+    echo "Files are: $FILES"
+
 
 
 
