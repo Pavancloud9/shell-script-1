@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 # while read LINE 
 # do
@@ -8,13 +8,20 @@
 
 
 
-while IFS= read -r line
-do
-  # Process the line (here we just print it)
-  echo "Line: $line"
-done < "$INPUT_FILE"
 
-echo "Finished reading file."    
+
+INPUT_FILE=13-delete-old-logs.sh
+
+while read LINE
+do
+    echo "$LINE"
+done < 13-delete-old-logs.sh
+
+
+
+
+
+
 
 
 
