@@ -54,10 +54,10 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS_AGO)
 
-./tutorial.log
-./loops.log
-./may.log
-./nov.log
+# ./tutorial.log
+# ./loops.log
+# ./may.log
+# ./nov.log
 
 if [ -n $FILES ] ## This condition Meaning is FILES are there (-n means not empty)
 then
