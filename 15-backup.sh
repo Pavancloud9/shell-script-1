@@ -62,9 +62,12 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS_AGO)
 if [ -n "$FILES" ] ## This condition Meaning is FILES are there (-n means not empty)
 then
     echo "Files are: $FILES"
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
 else
     echo "No files to zip"
 fi
+
+
 
 
 
