@@ -63,7 +63,8 @@ if [ -n "$FILES" ] ## This condition Meaning is FILES are there (-n means not em
 then
     echo "Files are: $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    
+    $FILES | zip -@ $ZIP_FILE 
+
 else
     echo "No files to zip"
 fi
