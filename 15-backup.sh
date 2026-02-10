@@ -52,8 +52,10 @@ fi
 
 ####### FIND THE FILES NOW
 
-FILES=$(find $SOURCE_DIR -name "*/log" -mtime +$DAYS_AGO)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS_AGO)
     echo "Files are: $FILES"
+
+
 
 
 
