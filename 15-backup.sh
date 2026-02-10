@@ -59,7 +59,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS_AGO)
 # ./may.log
 # ./nov.log
 
-if [ -n $FILES ] 
+if [ -n "$FILES" ] ## This condition Meaning is FILES are there (-n means not empty)
 then
     echo "Files are: $FILES"
 else
