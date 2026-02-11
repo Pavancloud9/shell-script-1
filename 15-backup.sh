@@ -74,6 +74,13 @@ else
     echo "No files to Zip"
 fi
 
+###### HERE INPUT FOR WHILE LOOP IS $FILES
+
+while read -r FILE
+  do
+    echo "Deleting files are: $FILE"
+done <<< $FILES
+
 
 
 
