@@ -6,21 +6,8 @@ TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"  
 ########    10-install-mysql-2026-02-04_12-45-43.log 
 
-##########################################
-
-PACKAGE () {
-    if [ $1 -ne 0 ]  
-    then
-        echo "$2..Failure"
-        exit 1 
-    else
-        echo "$2..success"
-    fi
-}
-
 ################################################
 ####### BACKUP FILES FROM ONE FOLDER TO OTHER FOLDER
-
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
@@ -59,7 +46,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS_AGO)
 # ./may.log
 # ./nov.log
 
-if [ -n "$FILES" ]
+if [ -n "$FILES" ]   ### -n means not empty
 then
     echo "Files are: $FILES"
       ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
@@ -67,6 +54,12 @@ then
         if [ $? -eq 0 ]
         then
             echo "Zip file created successfully for files older than $DAYS_AGO"
+            while read -r FILE
+            do
+                echo "Deleting files are: $FILE"
+                rm -rf $FILE
+                    echo "Files deleted: $FILE"
+                done <<< $FILES
         else
             echo "Failed to create zip file"
             exit 1
@@ -77,12 +70,7 @@ fi
 
 ###### HERE INPUT FOR WHILE LOOP IS $FILES
 
-while read -r FILE
-  do
-    echo "Deleting files are: $FILE"
-    rm -rf $FILE
-    echo "Files deleted: $FILE"
-done <<< $FILES
+
 
 
 
