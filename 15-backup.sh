@@ -66,6 +66,14 @@ else
     echo "No files to Zip"
 fi
 
+### WE FOUND THE FILES AND WE NEED TO ZIP NOW
+
+ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+
+find $SOURCE_DIR -name "*.log" -mtime $DAYS_AGO | zip -@ $ZIP_FILE
+
+
+
 
 
 
