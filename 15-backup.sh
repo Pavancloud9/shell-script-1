@@ -69,9 +69,10 @@ then
             echo "Zip file created successfully for files older than $DAYS_AGO"
         else
             echo "Failed to create zip file"
+            exit 1
         fi
 else
-    echo "No files to Zip"
+    echo "No files Found older than $DAYS_AGO"
 fi
 
 ###### HERE INPUT FOR WHILE LOOP IS $FILES
@@ -79,6 +80,8 @@ fi
 while read -r FILE
   do
     echo "Deleting files are: $FILE"
+    rm -rf $FILE
+    echo "Files deleted: $FILE"
 done <<< $FILES
 
 
