@@ -59,7 +59,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS_AGO)
 # ./may.log
 # ./nov.log
 
-if [ -n $FILES ]
+if [ -n "$FILES" ]
 then
     echo "Files are: $FILES"
 else
