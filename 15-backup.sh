@@ -69,7 +69,7 @@ then
             echo "Zip file created successfully for files older than $DAYS_AGO"
         else
             echo "Failed to create zip file"
-
+        fi
 else
     echo "No files to Zip"
 fi
