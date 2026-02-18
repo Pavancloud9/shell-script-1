@@ -58,7 +58,7 @@ then
         while read -r FILE
         do
             echo "Files will deleted: $FILE"
-        done < $FILES
+        done < "$FILES"
     fi
 else
     echo "No files to zip"
