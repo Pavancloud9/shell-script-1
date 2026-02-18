@@ -45,8 +45,8 @@ then
 fi
 
 FILES=$(find . -type f -name "*.java" -mtime +14)
-if [ -n $FILES ]
-then
+# if [ -n $FILES ]
+# then
     echo "Files are: $FILES"
 fi
 
