@@ -59,6 +59,7 @@ then
         do
             echo "Files will deleted: $FILE"
             rm -rf $FILE
+            echo "Files deleted: $FILE"
         done <<< $FILES
     fi
 else
