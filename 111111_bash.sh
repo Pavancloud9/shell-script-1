@@ -55,6 +55,10 @@ then
         echo "Zip creation failed"
     else
         echo "Zip creation successfull"
+        while read -r FILE
+        do
+            echo "Files will deleted: $FILE"
+        done
     fi
 else
     echo "No files to zip"
