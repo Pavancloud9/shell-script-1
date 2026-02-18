@@ -49,7 +49,7 @@ if [ -n "$FILES" ] ### -n means not empty
 then
     echo "Files are: $FILES"
     ZIP_FILE_DIRECTORY="$DEST_DIR/app-logs-$TIMESTAMP.zip" 
-    find $SOURCE_DIR -type f -name "*.java" -mtime +14 | zip -r
+    find $SOURCE_DIR -type f -name "*.java" -mtime +14 | $ZIP_FILE_DIRECTORY zip -r 
     if [ $? -ne 0 ]
     then
         echo "Zip creation failed"
