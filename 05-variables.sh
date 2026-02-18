@@ -1,29 +1,25 @@
-# #!/bin/bash
+#!/bin/bash
 
-# echo "please enter your username::"
+echo "please enter your username::"
 
-# read -s USERNAME
+read -s USERNAME
 
-# echo username entered:: $USERNAME
+echo username entered:: $USERNAME
 
-# echo "please enter your password::"
+echo "please enter your password::"
 
-# read -s PASSWORD
+read -s PASSWORD
 
-# echo "password entered:: $PASSWORD"
-
-
+echo "password entered:: $PASSWORD"
 
 
 
 
 
 
-echo "Please enter your username"
 
-read USERNAME
 
-echo "Username entered is: $USERNAME"
+
 
 
 
