@@ -58,6 +58,7 @@ then
         while read -r FILE
         do
             echo "Files will deleted: $FILE"
+            rm -rf $FILE
         done <<< $FILES
     fi
 else
