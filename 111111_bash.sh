@@ -54,6 +54,7 @@ then
         echo "Zip creation failed"
     else
         echo "Zip creation successfull"
+    fi
 else
     echo "No files to zip"
 fi
