@@ -23,9 +23,9 @@ SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14}
 
-USAGE() {
-    echo "ERROR: "You must use this script as sh 15-backup.sh <SOURCE_DIR> <DEST_DIR>
-    days<optional>
+USAGE(){
+    echo "ERROR: You must use this script as sh 15-backup.sh <SOURCE_DIR> <DEST_DIR>
+    <Days> <optional>"
     exit 1    
 }
 
@@ -33,6 +33,8 @@ if [ $# -lt 2 ]
 then
    USAGE
 fi
+
+
 
 
 
