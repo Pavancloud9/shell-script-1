@@ -49,6 +49,11 @@ if [ -n "$FILES" ] ### -n means not empty
 then
     echo "Files are: $FILES"
     ZIP_FILE_DIRECTORY="$DEST_DIR/app-logs-$TIMESTAMP.zip" | zip -r
+    if [ $? -ne 0 ]
+    then
+        echo "Zip creation failed"
+    else
+        echo "Zip creation successfull"
 else
     echo "No files to zip"
 fi
