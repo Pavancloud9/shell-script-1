@@ -9,7 +9,6 @@ LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 ################################################
 ####### BACKUP FILES FROM ONE FOLDER TO OTHER FOLDER
 
-echo $filename=$0
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 SOURCE_DIR=$1
