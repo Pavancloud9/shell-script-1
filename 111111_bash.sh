@@ -34,6 +34,16 @@ then
    USAGE
 fi
 
+if [ ! -d $SOURCE_DIR ]
+then
+    echo "Given $SOURCE_DIR does not exits, please check it"
+fi
+
+if [ ! -d $DEST_DIR ]
+then
+    echo "Given $DEST_DIR does not exits, please check it"
+fi
+
 
 
 
