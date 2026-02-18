@@ -44,7 +44,7 @@ then
     echo "Given $DEST_DIR does not exits, please check it"
 fi
 
-FILES=$(find . -type f -name "*.java" -mtime +14)
+FILES=$(find $SOURCE_DIR -type f -name "*.java" -mtime +14)
 # if [ -n $FILES ]
 # then
     echo "Files are: $FILES"
